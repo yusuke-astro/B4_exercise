@@ -36,3 +36,19 @@
 
     Transmittance_spp_IPMU_01.png
         透過率の周波数依存性のグラフ．測定終了時に自動出力されたもの．
+
+
+pythonプログラムについて
+  theory_curve.py
+  透過率の理論曲線を計算するためのモジュール．主に長野が開発して，髙瀬が各種チューニングを施している．
+  主にtheory_curve関数から派生した関数がパッケージされている．
+    theory_curve( n, d, freq_in, angle_in, incpol)
+      透過率の理論曲線を計算する関数．
+      n : 屈折率 type -->> float
+      d : サンプル厚さ type -->> float
+      freq_in : 入力周波数．type -->> numpy.array
+      angle_in : サンプル角度　type -->> float
+      incpol : P偏光orS偏光　type -->> int   -1を指定すること．
+
+    fit_2(freq_in, n)
+      フィッティング用関数．scipy.curve_fitで使用する．
